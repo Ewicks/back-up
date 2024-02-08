@@ -12,7 +12,6 @@ import re
 import pandas as pd
 import time
 from datetime import datetime, timedelta
-from fake_useragent import UserAgent
 import random
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import StaleElementReferenceException
@@ -75,19 +74,7 @@ def kingston_bot(startdate, enddate, wordlist):
     list_of_dates = split_dates(reversed_startdate, reversed_enddate)
 
 
-    # def create_driver_with_rotating_user_agent():
-    #     chrome_options = webdriver.ChromeOptions()
-    #     chrome_options.add_argument('headless')
-    #     chrome_options.add_argument('window-size=1200x600')
-
-    #     # Rotate user agents using fake_useragent library
-    #     user_agent = UserAgent().random
-    #     chrome_options.add_argument(f'user-agent={user_agent}')
-
-    #     driver = webdriver.Chrome(options=chrome_options)
-    #     return driver
-
-    # driver = create_driver_with_rotating_user_agent()
+   
 
     driver = webdriver.Chrome()
 

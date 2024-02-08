@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
-from fake_useragent import UserAgent
 import pandas as pd
 from datetime import datetime, timedelta
 import re
