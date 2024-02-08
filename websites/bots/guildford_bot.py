@@ -14,7 +14,6 @@ import time
 import pprint
 import requests
 import urllib3
-from dotenv import load_dotenv
 import os
 if os.path.isfile('env.py'):
     import env
@@ -24,9 +23,6 @@ if os.path.isfile('env.py'):
 def guildford_bot(startdate, enddate, wordlist):
 
  
-    # Load environment variables from .env file
-    load_dotenv()
-
     # Access the API key
     API_KEY = os.getenv('API-KEY', '')
     
