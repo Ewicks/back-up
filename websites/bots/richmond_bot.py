@@ -36,6 +36,7 @@ def richmond_bot(startdate, enddate, wordlist):
     data = []
    
     words = convert(wordlist)
+    print(words)
     words_search_for = words.rstrip(words[-1])
     parsed_startdate = pd.to_datetime(startdate, format='%Y/%m/%d')
     parsed_enddate = pd.to_datetime(enddate, format='%Y/%m/%d')

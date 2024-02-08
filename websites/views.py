@@ -24,14 +24,12 @@ from django.http import HttpResponse
 from django.core.files.base import ContentFile
 
 
-
 # Create your views here.
 def home(request):
     return render(request, 'index.html', {})
 
 def get_word_objects(request):
     words = Word.objects.filter(user=request.user).values_list('word', flat=True)
-	# words = Word.objects.values_list('word', flat=True)
     objectlist = list(words)
 
     return objectlist
@@ -50,13 +48,6 @@ def reviews(request):
 
     return render(request, 'reviews.html', {})
 
-# def bots(request):
-#     scrape_results = Scrape.objects.all()
-
-#     context = {
-#         'scrape_results': scrape_results,
-#     }
-#     return render(request, 'bots.html', context)
 
 def delete_scrape(request, pk):
     scrape = get_object_or_404(Scrape, pk=pk)
@@ -72,8 +63,6 @@ def deleteword(request, pk, redirect_to):
     return redirect(reverse(redirect_to))
 
 
-
-
 @login_required
 def richmond(request):
     words = Word.objects.filter(user=request.user)
@@ -82,6 +71,7 @@ def richmond(request):
 
     if request.method == 'POST':
         form = WordForm(request.POST or None)
+        print(form)
         if form.is_valid():
             word_instance = form.save(commit=False)
             word_instance.user = request.user
@@ -378,11 +368,18 @@ def results(request):
 
       
     if request.method == 'POST':
+        print(request.POST)
+        print('-------')
         datesdict = request.POST.dict()
+        print(datesdict)
+        print('------------')
         startdate = datesdict['startdate']
+        print(startdate)
+        print('-----')
         enddate = datesdict['enddate']
         wordlist = get_word_objects(request)
-        print(request.POST)
+        print('------')
+        print(wordlist)
         borough = request.POST.get('borough')
         print(borough)
 
