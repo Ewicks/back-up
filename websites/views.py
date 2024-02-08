@@ -15,7 +15,6 @@ from .bots.merton_bot import merton_bot
 from .bots.kensington_chelsea_bot import kensington_chelsea_bot
 from .bots.elmbridge_bot import elmbridge_bot
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
