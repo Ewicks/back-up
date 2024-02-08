@@ -12,3 +12,4 @@ sqlparse==0.4.4
 typing-extensions==4.7.1
 urllib3==1.26.9
 django-bootstrap-datepicker-plus==4.0.0
+dj_database_url==0.5.0
